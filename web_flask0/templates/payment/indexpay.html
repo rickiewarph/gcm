@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Collection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Available Garbage Collection Vehicles</h1>
+    <ul>
+        {% for vehicle in vehicles %}
+            <li>{{ vehicle }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Make a Payment</h2>
+    <form action="/pay" method="POST">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+        <button type="submit">Pay with M-Pesa</button>
+    </form>
+</body>
+</html>
